@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>Calculadora de Juros</title>
+        <link rel="stylesheet" type="text/css" href="frontend.css">
+        <script type="text/javascript" src="mask.js"></script>
+        <script type="text/javascript" src="Chart.js"></script>
+    </head>
+    <body>
+        <div id="container" style="border: 1px solid black;">
+            <div id="calc">
+                <table>
+                    <tr>
+                        <td>Valor Inicial:</td>
+                        <td><input type="text" id="valorInicial" value="" onkeyup="maskIt(this,event,'###.###.###,##',true)"></td>
+                    </tr>
+                    <tr>
+                        <td>Qtd de Meses:</td>
+                        <td><input type="number" id="meses" value="" step:"1" min:"0"></td>
+                    </tr>
+                    <tr>
+                        <td>% de Juros:</td>
+                        <td><input type="number" id="juros" value="" step:"0.1" min:"0"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="right"><button onclick="calcular()">CALCULAR</button></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div id="chart">
+                    <canvas id="line-chart"></canvas>
+            </div>
+            <script type="text/javascript" src="backend.js"></script>
+        </div>
+    </body>
+</html>
